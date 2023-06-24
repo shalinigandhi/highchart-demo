@@ -1,0 +1,30 @@
+@import './responsive';
+@import './colors';
+@import './reset';
+
+.container {
+    max-width: 1440px;
+    padding: 0 60px;
+    margin: 0 auto;
+
+    @include tablet {
+        padding: 0 40px;
+    }
+
+    @include mobileLarge {
+        padding: 0 20px;
+    }
+}
+
+.app-container {
+    padding: 70px 0 52px;
+
+    @include tablet {
+        padding: 0;
+        padding-bottom: 40px;
+    }
+
+    @include mobileLarge {
+        padding-bottom: 20px;
+    }
+}
