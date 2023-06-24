@@ -1,14 +1,9 @@
-import { getDateRange, getFormattedDate } from './helper';
+import { getFormattedDate } from './helper';
 
 const engagementHelper = {
     engagementMessageOverTimeChartOptions: (updatedMessageCountList, updatedChannels) => {
         let dynamicSeriesList = [];
-        let allDates = getDateRange();
-
-
-        // data: updatedMessageCountList[i].map((messageObj) => (
-        //     Number(messageObj.count)
-        // ))
+        let categoriesList = [];
 
         if (updatedMessageCountList?.length === updatedChannels?.length) {
 
@@ -20,18 +15,11 @@ const engagementHelper = {
                         Number(messageObj.count)
                     ))
                 });
+                categoriesList = updatedMessageCountList[i].map((messageObj) => (
+                    getFormattedDate(messageObj.timeBucket)
+                ))
             })
-            
-            console.log('dynamic series list', dynamicSeriesList);
-            // console.log('categories list -- >' ,categoriesList);
         }
-
-        
-        // allDates.map((date) => {
-        //     if (!date.includes(categoriesList)) {
-                
-        //     }
-        // )
         
 
         return {
@@ -43,7 +31,7 @@ const engagementHelper = {
                 text: 'Highchart'
             },
             xAxis: {
-                categories: allDates,
+                categories: categoriesList,
                 labels: {
                     style: {
                       color: '#393d45'
