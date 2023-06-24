@@ -1,19 +1,16 @@
-import { getFormattedDate } from './helper';
+import { getDateRange, getFormattedDate } from './helper';
 
 const engagementHelper = {
     engagementMessageOverTimeChartOptions: (updatedMessageCountList, updatedChannels) => {
         let messageCountArray = updatedMessageCountList.map((messageObj) => (
             Number(messageObj.count)
         ))
-        let datesArray = updatedMessageCountList.map((messageObj) => (
+
+        let dates = updatedMessageCountList.map((messageObj) => (
             getFormattedDate(messageObj.timeBucket)
-        ));
+        ))
 
-        let latestMessageWithData = updatedMessageCountList[updatedMessageCountList.length - 1]
-
-        let smallestDate = datesArray[0];
-        let largestDateWithData = getFormattedDate(latestMessageWithData?.timeBucket);
-
+        console.log(updatedChannels);
 
         return {
             chart: {
@@ -24,7 +21,7 @@ const engagementHelper = {
                 text: 'Highchart'
             },
             xAxis: {
-                categories: [...datesArray],
+                categories: [...dates],
                 labels: {
                     style: {
                       color: '#393d45'
@@ -49,8 +46,21 @@ const engagementHelper = {
                 tickWidth: 1,
                 gridLineWidth: 0
             },
+            tooltip: {
+                style: {
+                    color: '#ffffff',
+                },
+                shared: true, 
+                backgroundColor: '#000',
+                borderColor: '#0a8180',
+                borderRadius: 5,
+                borderWidth: 1,
+                formatter: function() {
+                    return this.series.name + '<br>' + this.y + ' messages on ' + this.x ;
+                }
+            },
             series: [{
-                name: 'Count',
+                name: updatedChannels && updatedChannels.length && updatedChannels[0].name,
                 color: '#0a8180',
                 data: [...messageCountArray],
             }]
