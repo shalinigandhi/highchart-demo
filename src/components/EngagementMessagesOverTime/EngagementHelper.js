@@ -41,7 +41,10 @@ const engagementHelper = {
                 lineWidth: 1,
                 gridLineWidth: 0,
                 tickInterval: 1,
-                crosshair: true
+                crosshair: {
+                    width: 1,
+                    color: '#a8a8ab'
+                }
             },
             yAxis: {
                 title: {
