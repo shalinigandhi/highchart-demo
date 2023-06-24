@@ -29,7 +29,11 @@ const engagementHelper = {
                     style: {
                       color: '#393d45'
                     }
-                }
+                },
+                tickLength: 10,
+                tickWidth: 1,
+                lineWidth: 1,
+                gridLineWidth: 0
             },
             yAxis: {
                 title: {
@@ -41,6 +45,9 @@ const engagementHelper = {
                         color: '#393d45'
                     }
                 },
+                tickLength: 10,
+                tickWidth: 1,
+                gridLineWidth: 0
             },
             series: [{
                 name: 'Count',
