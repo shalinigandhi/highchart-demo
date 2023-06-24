@@ -6,8 +6,7 @@ const engagementHelper = {
         let categoriesList = [];
 
         if (updatedMessageCountList?.length === updatedChannels?.length) {
-
-            updatedChannels.forEach((channel, i) => {
+            updatedChannels.forEach((element, i) => {
                 dynamicSeriesList.push({
                     name: updatedChannels[i][0],
                     color: '#0a8180',
@@ -41,7 +40,8 @@ const engagementHelper = {
                 tickWidth: 1,
                 lineWidth: 1,
                 gridLineWidth: 0,
-                tickInterval: 1
+                tickInterval: 1,
+                crosshair: true
             },
             yAxis: {
                 title: {

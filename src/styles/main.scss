@@ -1,5 +1,9 @@
 @import './reset';
 
-.highcharts-grid-line, .highcharts-credits, .highcharts-title {
+.highcharts-grid-line, .highcharts-credits, .highcharts-title, .highcharts-axis-title {
     opacity: 0 !important;
+}
+
+.app-container {
+    width: calc(100vw - 50px);
 }
