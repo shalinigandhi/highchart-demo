@@ -2,15 +2,37 @@ import { getDateRange, getFormattedDate } from './helper';
 
 const engagementHelper = {
     engagementMessageOverTimeChartOptions: (updatedMessageCountList, updatedChannels) => {
-        let messageCountArray = updatedMessageCountList.map((messageObj) => (
-            Number(messageObj.count)
-        ))
+        let dynamicSeriesList = [];
+        let allDates = getDateRange();
 
-        let dates = updatedMessageCountList.map((messageObj) => (
-            getFormattedDate(messageObj.timeBucket)
-        ))
 
-        console.log(updatedChannels);
+        // data: updatedMessageCountList[i].map((messageObj) => (
+        //     Number(messageObj.count)
+        // ))
+
+        if (updatedMessageCountList?.length === updatedChannels?.length) {
+
+            updatedChannels.forEach((channel, i) => {
+                dynamicSeriesList.push({
+                    name: updatedChannels[i][0],
+                    color: '#0a8180',
+                    data: updatedMessageCountList[i].map((messageObj) => (
+                        Number(messageObj.count)
+                    ))
+                });
+            })
+            
+            console.log('dynamic series list', dynamicSeriesList);
+            // console.log('categories list -- >' ,categoriesList);
+        }
+
+        
+        // allDates.map((date) => {
+        //     if (!date.includes(categoriesList)) {
+                
+        //     }
+        // )
+        
 
         return {
             chart: {
@@ -21,7 +43,7 @@ const engagementHelper = {
                 text: 'Highchart'
             },
             xAxis: {
-                categories: [...dates],
+                categories: allDates,
                 labels: {
                     style: {
                       color: '#393d45'
@@ -30,7 +52,8 @@ const engagementHelper = {
                 tickLength: 10,
                 tickWidth: 1,
                 lineWidth: 1,
-                gridLineWidth: 0
+                gridLineWidth: 0,
+                tickInterval: 1
             },
             yAxis: {
                 title: {
@@ -59,11 +82,7 @@ const engagementHelper = {
                     return this.series.name + '<br>' + this.y + ' messages on ' + this.x ;
                 }
             },
-            series: [{
-                name: updatedChannels && updatedChannels.length && updatedChannels[0].name,
-                color: '#0a8180',
-                data: [...messageCountArray],
-            }]
+            series: dynamicSeriesList
         }
     }
 }
