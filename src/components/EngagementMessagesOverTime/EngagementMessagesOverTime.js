@@ -11,24 +11,26 @@ const EngagementMessagesOverTime = () => {
     React.useEffect(() => {
         let uniqueChannelIds = [];
         let duplicateChannelIds = [];
-        for (let i = 0; i < messageCountList.length; i++) {
-            if (!uniqueChannelIds.includes(messageCountList[i].channelId)) {
-                uniqueChannelIds.push(messageCountList[i].channelId);
+
+        messageCountList.forEach((message) => {
+            if (!uniqueChannelIds.includes(message.channelId)) {
+                uniqueChannelIds.push(message.channelId);
             } else {
-                if (!duplicateChannelIds.includes(messageCountList[i].channelId)) {
-                    duplicateChannelIds.push(messageCountList[i].channelId)
+                if (!duplicateChannelIds.includes(message.channelId)) {
+                    duplicateChannelIds.push(message.channelId)
                 }
             }
-        }
+        })
+
         getUpdatedData(duplicateChannelIds);
     }, [])
 
 
     const getUpdatedData = (duplicateChannelIds) => {
-        let tempFinalMsgArray = [];
-        let tempFinalChannelArray = [];
+        let finalMsgArray = [];
+        let finalChannelArray = [];
 
-        duplicateChannelIds.forEach(dupChannelId => { 
+        duplicateChannelIds.forEach((dupChannelId) => { 
             let tempMessageArray = messageCountList.filter((messageObj) => (
                 dupChannelId.includes(messageObj.channelId)
             ));
@@ -39,12 +41,12 @@ const EngagementMessagesOverTime = () => {
                 channel.label
             ));
             
-            tempFinalMsgArray.push(tempMessageArray);
-            tempFinalChannelArray.push(tempChannelArray);
+            finalMsgArray.push(tempMessageArray);
+            finalChannelArray.push(tempChannelArray);
         });
 
-        setUpdatedMessageCountList(tempFinalMsgArray);
-        setUpdatedChannels(tempFinalChannelArray);
+        setUpdatedMessageCountList(finalMsgArray);
+        setUpdatedChannels(finalChannelArray);
     }
 
     const options = engagementHelper.engagementMessageOverTimeChartOptions(updatedMessageCountList, updatedChannels);

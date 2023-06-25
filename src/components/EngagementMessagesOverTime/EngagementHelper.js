@@ -6,15 +6,15 @@ const engagementHelper = {
         let categoriesList = [];
 
         if (updatedMessageCountList?.length === updatedChannels?.length) {
-            updatedChannels.forEach((element, i) => {
+            updatedMessageCountList.forEach((message, i) => {
                 dynamicSeriesList.push({
                     name: updatedChannels[i][0],
                     color: '#0a8180',
-                    data: updatedMessageCountList[i].map((messageObj) => (
+                    data: message.map((messageObj) => (
                         Number(messageObj.count)
                     ))
                 });
-                categoriesList = updatedMessageCountList[i].map((messageObj) => (
+                categoriesList = message.map((messageObj) => (
                     getFormattedDate(messageObj.timeBucket)
                 ))
             })
