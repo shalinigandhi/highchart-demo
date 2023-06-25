@@ -62,7 +62,7 @@ const engagementHelper = {
             },
             tooltip: {
                 style: {
-                    color: '#ffffff',
+                    color: '#dadadd',
                 },
                 shared: true, 
                 backgroundColor: '#000',

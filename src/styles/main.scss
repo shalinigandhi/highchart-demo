@@ -1,9 +1,20 @@
 @import './reset';
 
+.app-container {
+    width: calc(100vw - 50px);
+}
+
 .highcharts-grid-line, .highcharts-credits, .highcharts-title, .highcharts-axis-title {
     opacity: 0 !important;
 }
 
-.app-container {
-    width: calc(100vw - 50px);
+.highcharts-legend-box {
+    fill: #000;
 }
+.highcharts-legend-item  {
+    text {
+        fill: #dadadd !important;
+    }
+}
+
+
