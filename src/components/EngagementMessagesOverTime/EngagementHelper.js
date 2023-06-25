@@ -65,12 +65,12 @@ const engagementHelper = {
                     color: '#dadadd',
                 },
                 shared: true, 
-                backgroundColor: '#000',
+                backgroundColor: 'rgba(0, 0, 0, 0.6)',
                 borderColor: '#0a8180',
                 borderRadius: 5,
                 borderWidth: 1,
                 formatter: function() {
-                    return this.series.name + '<br>' + this.y + ' messages on ' + this.x ;
+                    return '<strong>' + this.series.name + '</strong>' + '<br>' + this.y + ' messages on ' + this.x ;
                 }
             },
             series: dynamicSeriesList

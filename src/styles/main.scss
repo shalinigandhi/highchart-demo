@@ -9,12 +9,15 @@
 }
 
 .highcharts-legend-box {
-    fill: #000;
+    fill: #15161b;
 }
 .highcharts-legend-item  {
     text {
         fill: #dadadd !important;
     }
+    .highcharts-point {
+        display: none;
+    }
+    
 }
-
 
