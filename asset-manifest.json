@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/highchart-demo/static/css/main.1d93f44c.css",
-    "main.js": "/highchart-demo/static/js/main.fbb941e1.js",
+    "main.css": "/highchart-demo/static/css/main.2d534500.css",
+    "main.js": "/highchart-demo/static/js/main.c45680c5.js",
     "static/js/787.b4de6234.chunk.js": "/highchart-demo/static/js/787.b4de6234.chunk.js",
     "index.html": "/highchart-demo/index.html",
-    "main.1d93f44c.css.map": "/highchart-demo/static/css/main.1d93f44c.css.map",
-    "main.fbb941e1.js.map": "/highchart-demo/static/js/main.fbb941e1.js.map",
+    "main.2d534500.css.map": "/highchart-demo/static/css/main.2d534500.css.map",
+    "main.c45680c5.js.map": "/highchart-demo/static/js/main.c45680c5.js.map",
     "787.b4de6234.chunk.js.map": "/highchart-demo/static/js/787.b4de6234.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1d93f44c.css",
-    "static/js/main.fbb941e1.js"
+    "static/css/main.2d534500.css",
+    "static/js/main.c45680c5.js"
   ]
 }
