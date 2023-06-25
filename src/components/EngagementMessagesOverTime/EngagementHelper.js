@@ -33,7 +33,7 @@ const engagementHelper = {
                 categories: categoriesList,
                 labels: {
                     style: {
-                      color: '#393d45'
+                      color: '#616264'
                     }
                 },
                 tickLength: 10,
@@ -41,6 +41,7 @@ const engagementHelper = {
                 lineWidth: 1,
                 gridLineWidth: 0,
                 tickInterval: 1,
+                tickColor: '#616264',
                 crosshair: {
                     width: 1,
                     color: '#a8a8ab'
@@ -48,17 +49,18 @@ const engagementHelper = {
             },
             yAxis: {
                 title: {
-                    text: 'Message Count'
+                    text: 'Y axis'
                 },
                 labels: {
                     format: '{value}',
                     style: {
-                        color: '#393d45'
+                        color: '#616264'
                     }
                 },
                 tickLength: 10,
                 tickWidth: 1,
-                gridLineWidth: 0
+                gridLineWidth: 0,
+                tickColor: '#616264',
             },
             tooltip: {
                 style: {
