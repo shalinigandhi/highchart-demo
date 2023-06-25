@@ -73,7 +73,7 @@ const engagementHelper = {
                 borderWidth: 1,
                 
                 formatter: function() {
-                    return '<strong>' + this.series.name + '</strong>' + '<br>' + this.y + (this.y > 1 ? ' messages': ' message') + ' on ' + this.x ;
+                    return `<strong>${this.series.name}</strong><br> ${this.y} ${(this.y > 1 ? ' messages': ' message')} on ${this.x}` ;
                 }
             },
             series: dynamicSeriesList

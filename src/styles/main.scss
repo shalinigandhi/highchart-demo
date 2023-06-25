@@ -2,6 +2,10 @@
 
 .app-container {
     width: calc(100vw - 50px);
+
+    @media only screen and (max-width: 600px) {
+        width: calc(100vw - 20px);
+    }
 }
 
 .highcharts-grid-line, .highcharts-credits, .highcharts-title, .highcharts-axis-title {
